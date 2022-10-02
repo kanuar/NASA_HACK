@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <title>JUNOday</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="evo-calendar.min.css">
+      <link rel="stylesheet" href="evo-calendar.midnight-blue.min.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap"
+            rel="stylesheet">
+</head>
+
+<body>
+      <h1>JUNO countdown</h1>
+      <div id="clockdiv">
+            <div>
+                  <span class="days" id="day"></span>
+                  <div class="smalltext">Days</div>
+            </div>
+            <div>
+                  <span class="hours" id="hour"></span>
+                  <div class="smalltext">Hours</div>
+            </div>
+            <div>
+                  <span class="minutes" id="minute"></span>
+                  <div class="smalltext">Minutes</div>
+            </div>
+            <div>
+                  <span class="seconds" id="second"></span>
+                  <div class="smalltext">Seconds</div>
+            </div>
+      </div>
+
+      <script>
+
+            var deadline = new Date("nov 20, 2022 21:30:25").getTime();
+
+            var x = setInterval(function () {
+
+                  var now = new Date().getTime();
+                  var t = deadline - now;
+                  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+                  var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+                  var seconds = Math.floor((t % (1000 * 60)) / 1000);
+                  document.getElementById("day").innerHTML = days;
+                  document.getElementById("hour").innerHTML = hours;
+                  document.getElementById("minute").innerHTML = minutes;
+                  document.getElementById("second").innerHTML = seconds;
+                  if (t < 0) {
+                        clearInterval(x);
+                        document.getElementById("demo").innerHTML = "TIME UP";
+                        document.getElementById("day").innerHTML = '0';
+                        document.getElementById("hour").innerHTML = '0';
+                        document.getElementById("minute").innerHTML = '0';
+                        document.getElementById("second").innerHTML = '0';
+                  }
+            }, 1000);
+      </script>
+
+      <br><br><br>
+      <div class="hero">
+            <div id="calendar"></div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+      <script src="evo-calendar.min.js"></script>
+
+      <script>
+            $(document).ready(function () {
+                  $('#calendar').evoCalendar({
+                        theme: "Midnight Blue",
+                        calendarEvents: [
+                              {
+                                    id: 'event1', // Event's ID (required)
+                                    name: "New Year", // Event name (required)
+                                    date: "January/1/2020", // Event date (required)
+                                    description:"new year",
+                                    type: "holiday", // Event type (required)
+                                    everyYear: true // Same event every year (optional)
+                              },
+                              {
+                                    name: "Vacation Leave",
+                                    badge: "02/13 - 02/15", // Event badge (optional)
+                                    date: ["February/13/2020", "February/15/2020"], // Date range
+                                    description: "Vacation leave for 3 days.", // Event description (optional)
+                                    type: "event",
+                                    color: "#63d867" // Event custom color (optional)
+                              }
+                        ]
+                  })
+
+            })
+
+      </script>
+</body>
+
+</html>
