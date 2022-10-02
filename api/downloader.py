@@ -1,3 +1,5 @@
+from zipfile import ZipFile
+
 def downloader(k):
     wget.download(k)
     f1=str(i)+'-Data.zip'
