@@ -22,17 +22,7 @@ def mergefinal(proj_id,jres):
     imgg=cv.imread(green,cv.IMREAD_UNCHANGED)
     imgr=cv.imread(red,cv.IMREAD_UNCHANGED)
     imgm=cv.imread(map,cv.IMREAD_UNCHANGED)
-
-
-
-
-
-    """ imgb=cv.imread("C:\\Users\\aayus\\college\\NASA_HACK\\imag_processing\\ImageSet\\JNCE_2022229_44C00045_V01-blue.png",cv.IMREAD_UNCHANGED)
-    imgg=cv.imread("C:\\Users\\aayus\\college\\NASA_HACK\\imag_processing\\ImageSet\\JNCE_2022229_44C00045_V01-green.png",cv.IMREAD_UNCHANGED)
-    imgr=cv.imread("C:\\Users\\aayus\\college\\NASA_HACK\\imag_processing\\ImageSet\\JNCE_2022229_44C00045_V01-red.png",cv.IMREAD_UNCHANGED)
-    map=cv.imread("C:\\Users\\aayus\\college\\NASA_HACK\\imag_processing\\ImageSet\\JNCE_2022229_44C00045_V01-mapprojected.png",cv.IMREAD_UNCHANGED) """
     mergetemp=cv.merge([imgb,imgg,imgr])
-
     #add(or blend) the images
     mergefinal = cv.addWeighted(mergetemp, 0.7, imgm, 0.3, 0)
 
@@ -53,4 +43,4 @@ def mergefinal(proj_id,jres):
     cv.imwrite("mergefinal.png", mergefinal)
     #cv.waitKey(0) 
 
-json_parse(636)
+#json_parse(636)
