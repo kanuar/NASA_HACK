@@ -1,5 +1,6 @@
 import cv2 as cv
 import numpy as np
+
 imgb=cv.imread("C:\\Users\\aayus\\college\\NASA_HACK\\imag_processing\\ImageSet\\JNCE_2022229_44C00045_V01-blue.png",cv.IMREAD_UNCHANGED)
 imgg=cv.imread("C:\\Users\\aayus\\college\\NASA_HACK\\imag_processing\\ImageSet\\JNCE_2022229_44C00045_V01-green.png",cv.IMREAD_UNCHANGED)
 imgr=cv.imread("C:\\Users\\aayus\\college\\NASA_HACK\\imag_processing\\ImageSet\\JNCE_2022229_44C00045_V01-red.png",cv.IMREAD_UNCHANGED)
@@ -23,4 +24,5 @@ cv.imshow('map',map)
 cv.imshow('red',imgr)
 cv.imshow('green',imgg)
 cv.imshow('blue',imgb)
-cv.waitKey(0)
+cv.imwrite("mergefinal.png", mergefinal)
+cv.waitKey(0) 
