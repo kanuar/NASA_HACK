@@ -21,7 +21,7 @@ def load_image(img_path):
 def art_gen(s_path):
     #c_path=front end path
     #content_image = load_image(c_path)
-    content_image = load_image('andy.png')
+    content_image = load_image('pp1.jfif')
     style_image = load_image(s_path)
 
     # %%
