@@ -1,6 +1,15 @@
 import cv2 as cv
 import numpy as np
 import downloader 
+import json
+
+def json_parse(proj_id):
+    path=f"C:\\Users\\aayus\\college\\NASA_HACK\\imag_processing\\{proj_id}-Data\DataSet\\{proj_id}-Metadata.json"
+    f1=open(path)
+    data=json.load(f1)
+    s=data["PRODUCT_ID"]
+    mergefinal(proj_id,s)
+
 
 
 
@@ -44,4 +53,4 @@ def mergefinal(proj_id,jres):
     cv.imwrite("mergefinal.png", mergefinal)
     #cv.waitKey(0) 
 
-mergefinal(636,'JNCE_2017033_04C00109_V01')
+json_parse(636)
