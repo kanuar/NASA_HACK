@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup
 outp3={}
 url_main='https://www.missionjuno.swri.edu/junocam/processing?id='
 #id1=[x for x in range(624,13927)]
-id1=[x for x in range(5945,8605)]
+id1=[x for x in range(5946,8605)]
 for i in id1:
     print(i)
     u1=url_main+str(i)
