@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup
 outp3={}
 url_main='https://www.missionjuno.swri.edu/junocam/processing?id='
 #id1=[x for x in range(624,13927)]
-id1=[x for x in range(6571,9855)]
+id1=[x for x in range(5945,8605)]
 for i in id1:
     print(i)
     u1=url_main+str(i)
@@ -46,7 +46,7 @@ for i in id1:
 print('completed')
 
 f=open("file3.txt",'w')
-f.write(outp1)
+f.write(outp3)
 f.close()
 '''
         wget.download(k)
